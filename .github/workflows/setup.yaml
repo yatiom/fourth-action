@@ -10,12 +10,12 @@ jobs:
               uses: actions/setup-node@v3
               with:
                 node-version: 18
+            - name: npm ci
+              run: npm ci
     lint:
         needs: setup
         runs-on: ubuntu-22.04
         steps:
-            - name: build node
-              run: npm ci
             - name: Run lint
               run: npm run lint
     test:

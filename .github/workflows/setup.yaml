@@ -16,8 +16,6 @@ jobs:
         steps:
             - name: build node
               run: npm ci
-            - name: Setup lint
-              run: npm install eslint --save-dev
             - name: Run lint
               run: npm run lint
     test:

@@ -36,8 +36,22 @@ jobs:
               uses: actions/setup-node@v3
               with:
                 node-version: 18
+            - name: Setup vitest
+              run: npm install --save-dev vitest
             - name: Run tests
               run: npm test
-            - name: build npm
-              run: npm run build
+    build:
+         needs: lint
+         runs-on: ubuntu-22.04
+         steps:
+           - name: Checkout
+             uses: actions/checkout@v3
+           - name: Setup NodeJS
+             uses: actions/setup-node@v3
+             with:
+                node-version: 18
+           - name: Install vite
+             run: npm install --save-dev vite
+           - name: build npm
+             run: npm run build
 

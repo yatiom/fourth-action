@@ -41,7 +41,7 @@ jobs:
             - name: Run tests
               run: npm test
     build:
-         needs: lint
+         needs: test
          runs-on: ubuntu-22.04
          steps:
            - name: Checkout

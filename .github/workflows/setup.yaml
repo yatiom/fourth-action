@@ -37,7 +37,7 @@ jobs:
               with:
                 node-version: 18
             - name: Run tests
-              run: npm run test
+              run: npm test
             - name: build npm
               run: npm run build
 
